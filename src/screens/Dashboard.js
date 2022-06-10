@@ -22,11 +22,11 @@ const Dashboard = ({navigation}) => {
         <Image source={empImg} />
       </View>
       <ScrollView style={styles.content}>
-        <Text style={styles.text}>Name: {user.name}</Text>
-        <Text style={styles.text}>Email: {user.email}</Text>
-        <Text style={styles.text}>Designation: {user.designation}</Text>
-        <Text style={styles.text}>Contact number: {user.contact}</Text>
-        <Text style={styles.text}>DOB: {new Date(user.dob).toDateString() }</Text>
+        <Text style={styles.text}>Name: {user&& user.name}</Text>
+        <Text style={styles.text}>Email: {user&& user.email}</Text>
+        <Text style={styles.text}>Designation: {user&& user.designation}</Text>
+        <Text style={styles.text}>Contact number: {user&& user.contact}</Text>
+        <Text style={styles.text}>DOB: {new Date(user&& user.dob).toDateString() }</Text>
       </ScrollView>
       <View style={styles.logout}>
         <ButtonComponent text="Logout" clickHandler={logoutHandler} />
@@ -42,13 +42,12 @@ const styles = StyleSheet.create({
     marginHorizontal: '5%',
   },
   content: {
-    backgroundColor: 'gray',
     padding: 10,
     height: 150,
     margin:'4%'
   },
   text: {
-    color: 'white',
+    color: 'gray',
     lineHeight: 25,
     fontSize: 20,
     
